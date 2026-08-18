@@ -1,0 +1,15 @@
+[
+  { "name": "lead_temperature", "type": "selector", "options": ["Hot", "Warm", "Cold"], "description": "Classify only from stated timing and next-step intent." },
+  { "name": "purchase_timeline", "type": "text", "description": "When the caller expects to buy or decide; blank if not stated." },
+  { "name": "budget_type", "type": "selector", "options": ["Total price", "Monthly comfort", "Not provided"], "description": "How the caller framed budget." },
+  { "name": "budget_amount", "type": "number", "description": "Exact caller-stated amount only; blank if none." },
+  { "name": "family_or_passenger_need", "type": "text", "description": "Passenger, child-seat, pet, cargo, accessibility, or towing need." },
+  { "name": "preferred_body_style", "type": "text", "description": "Preferred or accepted body styles stated or confirmed by the caller." },
+  { "name": "must_have_features", "type": "text", "description": "Only caller-stated must-have features." },
+  { "name": "recommended_stock_ids", "type": "text", "description": "Comma-separated stock IDs actually mentioned by Avery." },
+  { "name": "appointment_requested", "type": "boolean", "description": "True only if the caller requested or accepted a visit." },
+  { "name": "appointment_booked", "type": "boolean", "description": "True only after the booking tool returned success." },
+  { "name": "appointment_datetime", "type": "text", "description": "Confirmed slot including America/Chicago timezone; blank otherwise." },
+  { "name": "handoff_required", "type": "boolean", "description": "True when financing, negotiation, trade-in valuation, complaint, direct human request, or unresolved issue needs a person." },
+  { "name": "call_summary", "type": "text", "description": "Three factual sentences for a salesperson: customer need, grounded recommendation, and next-step outcome." }
+]

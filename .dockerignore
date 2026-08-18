@@ -1,0 +1,16 @@
+.git
+.github
+.codex
+.agents
+.env
+.env.*
+!.env.example
+node_modules
+.pnpm-store
+frontend/dist
+*.log
+backend/test
+backend/retell
+backend/data
+backend/config
+backend/schemas

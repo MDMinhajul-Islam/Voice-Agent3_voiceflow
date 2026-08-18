@@ -1,0 +1,11 @@
+{
+  "market": "US",
+  "country": "United States",
+  "currency": "USD",
+  "distanceUnit": "mile",
+  "efficiencyUnits": ["mpg", "mpge", "kwh_per_100_miles"],
+  "priceLanguage": "MSRP excluding destination, taxes, title, registration, options, and dealer charges unless explicitly stated",
+  "inventoryPolicy": "Never claim availability without a live dealer inventory response.",
+  "taxPolicy": "Do not estimate an out-the-door price without the customer's ZIP code and a current tax/fee service.",
+  "datasetVerifiedAt": "2026-08-18T00:00:00Z"
+}

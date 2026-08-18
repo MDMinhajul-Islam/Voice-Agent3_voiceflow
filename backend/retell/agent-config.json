@@ -1,0 +1,35 @@
+{
+  "agentName": "Northstar Auto Sales Concierge - Intern",
+  "agentType": "single_prompt",
+  "agentPersona": "Avery",
+  "language": "en-US",
+  "voiceDirection": "Professional, warm, calm, natural, and not theatrical",
+  "dealership": {
+    "name": "Northstar Auto Gallery",
+    "trainingOnly": true,
+    "address": "500 Demo Drive, Plano, TX 75000",
+    "timezone": "America/Chicago",
+    "hours": {
+      "mondayToSaturday": "09:00-19:00",
+      "sunday": "12:00-17:00"
+    }
+  },
+  "appointment": {
+    "durationMinutes": 45,
+    "eventTypeName": "Northstar Vehicle Consultation or Test Drive",
+    "calendarProvider": "cal.com",
+    "availabilityTool": "check_calendar_availability",
+    "bookingTool": "book_appointment"
+  },
+  "knowledgeBase": {
+    "name": "Northstar Training Inventory",
+    "source": "knowledge-base/Car_Dealership_Starter_Inventory.xlsx",
+    "retrievalChunks": 3,
+    "similarityThreshold": 0.6
+  },
+  "deployment": {
+    "publicCallingAllowed": false,
+    "fictionalCallerDataOnly": true,
+    "recordingDisclosureRequiredBeforeRealDeployment": true
+  }
+}

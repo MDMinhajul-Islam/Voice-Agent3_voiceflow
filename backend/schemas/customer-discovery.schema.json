@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://velocity.local/schemas/customer-discovery.schema.json",
+  "title": "Customer automotive discovery profile",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "sessionId": { "type": "string" },
+    "language": { "enum": ["bn", "en", "banglish", "unknown"] },
+    "expertiseDepth": { "enum": ["guided", "informed", "expert"] },
+    "intent": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "enum": ["explore", "shortlist", "compare", "replace", "trade_in", "finance", "availability", "test_drive", "book", "support"] }
+    },
+    "purchase": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "condition": { "enum": ["new", "used", "reconditioned", "open", "unknown"] },
+        "timeline": { "enum": ["immediate", "one_month", "three_months", "six_months_plus", "researching", "unknown"] },
+        "paymentMethod": { "enum": ["cash", "finance", "mixed", "unknown"] },
+        "budget": {
+          "type": "object",
+          "properties": {
+            "min": { "type": ["number", "null"], "minimum": 0 },
+            "max": { "type": ["number", "null"], "minimum": 0 },
+            "currency": { "type": "string", "default": "BDT" },
+            "flexible": { "type": "boolean" }
+          },
+          "required": ["min", "max", "currency", "flexible"],
+          "additionalProperties": false
+        },
+        "monthlyPaymentMax": { "type": ["number", "null"], "minimum": 0 },
+        "downPayment": { "type": ["number", "null"], "minimum": 0 }
+      },
+      "required": ["condition", "timeline", "paymentMethod", "budget" ]
+    },
+    "household": {
+      "type": "object",
+      "properties": {
+        "familySize": { "type": ["integer", "null"], "minimum": 1 },
+        "regularPassengers": { "type": ["integer", "null"], "minimum": 1 },
+        "maximumPassengers": { "type": ["integer", "null"], "minimum": 1 },
+        "children": { "type": ["integer", "null"], "minimum": 0 },
+        "elderlyAccessRequired": { "type": ["boolean", "null"] },
+        "luggageNeed": { "enum": ["low", "medium", "high", "unknown"] }
+      },
+      "additionalProperties": false
+    },
+    "usage": {
+      "type": "object",
+      "properties": {
+        "primaryPurpose": { "enum": ["personal", "family", "business", "ride_share", "mixed", "unknown"] },
+        "cityPercent": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+        "highwayPercent": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+        "roughRoadPercent": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+        "monthlyDistanceKm": { "type": ["number", "null"], "minimum": 0 },
+        "roadCondition": { "enum": ["smooth", "mixed", "rough", "unknown"] },
+        "parkingConstraint": { "enum": ["tight", "normal", "none", "unknown"] },
+        "frequentLongTrips": { "type": ["boolean", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "preferences": {
+      "type": "object",
+      "properties": {
+        "bodyTypes": { "type": "array", "uniqueItems": true, "items": { "enum": ["hatchback", "sedan", "crossover", "suv", "mpv", "pickup", "coupe", "wagon", "open"] } },
+        "fuelTypes": { "type": "array", "uniqueItems": true, "items": { "enum": ["petrol", "diesel", "hybrid", "phev", "electric", "cng", "open"] } },
+        "transmissions": { "type": "array", "uniqueItems": true, "items": { "enum": ["automatic", "manual", "cvt", "dct", "open"] } },
+        "drivetrains": { "type": "array", "uniqueItems": true, "items": { "enum": ["fwd", "rwd", "awd", "4wd", "open"] } },
+        "preferredMakes": { "type": "array", "items": { "type": "string" } },
+        "excludedMakes": { "type": "array", "items": { "type": "string" } },
+        "requiredFeatures": { "type": "array", "items": { "type": "string" } },
+        "niceToHaveFeatures": { "type": "array", "items": { "type": "string" } },
+        "priorities": { "type": "array", "items": { "enum": ["price", "safety", "space", "comfort", "efficiency", "performance", "reliability", "resale", "technology", "off_road", "low_maintenance"] } }
+      },
+      "additionalProperties": false
+    },
+    "existingVehicle": {
+      "type": ["object", "null"],
+      "properties": {
+        "make": { "type": ["string", "null"] }, "model": { "type": ["string", "null"] }, "year": { "type": ["integer", "null"] }, "variant": { "type": ["string", "null"] },
+        "mileageKm": { "type": ["number", "null"] }, "condition": { "enum": ["excellent", "good", "fair", "poor", "unknown"] },
+        "serviceHistory": { "enum": ["complete", "partial", "none", "unknown"] }, "accidentHistory": { "enum": ["none", "minor", "major", "unknown"] },
+        "painPoints": { "type": "array", "items": { "type": "string" } }, "desiredImprovements": { "type": "array", "items": { "type": "string" } },
+        "tradeInRequested": { "type": "boolean" }, "expectedValue": { "type": ["number", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "consent": {
+      "type": "object",
+      "properties": { "contactCapture": { "type": "boolean" }, "followUp": { "type": "boolean" }, "recordedAt": { "type": ["string", "null"], "format": "date-time" } },
+      "required": ["contactCapture", "followUp", "recordedAt"],
+      "additionalProperties": false
+    },
+    "answeredFields": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+    "unknownFields": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+    "lastUpdatedAt": { "type": "string", "format": "date-time" }
+  },
+  "required": ["sessionId", "language", "expertiseDepth", "intent", "purchase", "household", "usage", "preferences", "existingVehicle", "consent", "answeredFields", "unknownFields", "lastUpdatedAt"]
+}

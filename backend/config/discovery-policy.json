@@ -1,0 +1,14 @@
+{
+  "minimumRecommendationEvidence": ["purchase.budget.max", "purchase.condition", "household.regularPassengers", "usage.primaryPurpose", "preferences.priorities"],
+  "questionPriority": ["purchase.budget.max", "household.regularPassengers", "usage.primaryPurpose", "usage.roadCondition", "purchase.condition", "preferences.priorities", "preferences.fuelTypes", "purchase.timeline"],
+  "conditionalQuestions": {
+    "replace_or_trade_in": ["existingVehicle.make", "existingVehicle.model", "existingVehicle.year", "existingVehicle.painPoints", "existingVehicle.desiredImprovements", "existingVehicle.tradeInRequested"],
+    "electric": ["usage.monthlyDistanceKm", "charging.homeAvailable", "charging.workAvailable", "usage.frequentLongTrips"],
+    "finance": ["purchase.downPayment", "purchase.monthlyPaymentMax", "purchase.timeline"],
+    "large_family": ["household.maximumPassengers", "household.elderlyAccessRequired", "household.luggageNeed"],
+    "expert_compare": ["preferences.powertrainPriorities", "preferences.ownershipPriorities", "preferences.performancePriorities"]
+  },
+  "sensitiveFields": ["customer.name", "customer.phone", "customer.email"],
+  "consentRequiredBefore": ["customer.name", "customer.phone", "customer.email", "booking.create"],
+  "initialRecommendationLimit": 3
+}
