@@ -1,4 +1,4 @@
-const CAL_BASE_URL = "https://api.cal.com/v2";
+﻿const CAL_BASE_URL = "https://api.cal.com/v2";
 const SLOT_API_VERSION = "2024-09-04";
 const BOOKING_API_VERSION = "2026-02-25";
 
@@ -17,7 +17,11 @@ async function calFetch(path, { method = "GET", body, version = SLOT_API_VERSION
   const { apiKey } = config();
   const response = await fetch(`${CAL_BASE_URL}${path}`, {
     method,
-    headers: { Authorization: `Bearer ${apiKey}`, "cal-api-version": version, "Content-Type": "application/json" },
+    headers: {
+      Authorization: 'Bearer ' + apiKey,
+      "cal-api-version": version,
+      "Content-Type": "application/json",
+    },
     body: body ? JSON.stringify(body) : undefined,
     signal: AbortSignal.timeout(12_000),
   });
