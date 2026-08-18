@@ -59,7 +59,7 @@ async function verifyExactSlot(startTime) {
 
 export async function bookAppointment(args) {
   const { username, eventTypeSlug, timeZone: defaultZone } = config();
-  const required = ["start_time", "customer_name", "customer_email", "appointment_type", "stock_ids"];
+  const required = ["start_time", "customer_name", "customer_email", "customer_phone", "appointment_type", "stock_ids"];
   for (const field of required) if (!args[field] || (Array.isArray(args[field]) && !args[field].length)) throw new Error(`${field} is required.`);
   if (!/^\S+@\S+\.\S+$/.test(args.customer_email)) throw new Error("A valid customer_email is required.");
   const start = new Date(args.start_time);

@@ -29,7 +29,7 @@ test("rechecks the exact slot before creating a booking", async () => {
     assert.equal(body.attendee.email, "buyer@example.com");
     return new Response(JSON.stringify({ status: "success", data: { uid: "booking_123", status: "accepted", start: body.start } }), { status: 201 });
   };
-  const result = await bookAppointment({ start_time: "2030-01-10T16:00:00Z", customer_name: "Buyer", customer_email: "buyer@example.com", customer_time_zone: "America/Chicago", appointment_type: "test_drive", stock_ids: ["NVA-001"] });
+  const result = await bookAppointment({ start_time: "2030-01-10T16:00:00Z", customer_name: "Buyer", customer_email: "buyer@example.com", customer_phone: "+12145550123", customer_time_zone: "America/Chicago", appointment_type: "test_drive", stock_ids: ["NVA-001"] });
   assert.equal(result.success, true);
   assert.equal(result.booking_id, "booking_123");
   assert.equal(bookingWrites, 1);

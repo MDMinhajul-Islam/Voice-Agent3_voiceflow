@@ -7,12 +7,12 @@
   "payload_args_only": true,
   "parameters": {
     "type": "object",
-    "required": ["start_time", "customer_name", "customer_email", "customer_time_zone", "appointment_type", "stock_ids"],
+    "required": ["start_time", "customer_name", "customer_email", "customer_phone", "customer_time_zone", "appointment_type", "stock_ids"],
     "properties": {
       "start_time": { "type": "string", "description": "Exact ISO 8601 slot returned by check_calendar_availability." },
       "customer_name": { "type": "string" },
       "customer_email": { "type": "string" },
-      "customer_phone": { "type": "string", "description": "Optional E.164 phone number." },
+      "customer_phone": { "type": "string", "description": "Confirmed customer phone number in E.164 format, for example +12145550123." },
       "customer_time_zone": { "type": "string", "description": "Caller's IANA timezone." },
       "appointment_type": { "type": "string", "enum": ["sales_consultation", "test_drive", "trade_in_inspection", "financing_consultation"] },
       "stock_ids": { "type": "array", "items": { "type": "string" } },
