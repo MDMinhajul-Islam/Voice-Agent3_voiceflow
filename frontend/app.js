@@ -1,0 +1,13 @@
+const $=(s,p=document)=>p.querySelector(s), $$=(s,p=document)=>[...p.querySelectorAll(s)];
+const voicePanel=$('.voice-panel');
+$$('.voice-trigger').forEach(b=>b.addEventListener('click',()=>{voicePanel.classList.add('open');voicePanel.setAttribute('aria-hidden','false')}));
+$('.close-panel').addEventListener('click',()=>{voicePanel.classList.remove('open');voicePanel.setAttribute('aria-hidden','true')});
+$('.listen-btn').addEventListener('click',e=>{e.currentTarget.innerHTML='<span>●</span> Listening…';e.currentTarget.style.background='#ff6138';$('.voice-panel .listening').textContent='I’M LISTENING';$('.voice-panel h3').innerHTML='Tell me about your<br>perfect drive.'});
+const modal=$('#loginModal');
+$$('[data-open-login]').forEach(b=>b.addEventListener('click',()=>{modal.classList.add('open');modal.setAttribute('aria-hidden','false')}));
+$$('[data-close-login]').forEach(b=>b.addEventListener('click',()=>{modal.classList.remove('open');modal.setAttribute('aria-hidden','true')}));
+$('#loginForm').addEventListener('submit',e=>{e.preventDefault();modal.classList.remove('open');$('#dashboard').classList.add('open');$('#dashboard').setAttribute('aria-hidden','false');document.body.style.overflow='hidden'});
+$('.logout').addEventListener('click',()=>{$('#dashboard').classList.remove('open');$('#dashboard').setAttribute('aria-hidden','true');document.body.style.overflow=''});
+$$('.filters button').forEach(b=>b.addEventListener('click',()=>{$$('.filters button').forEach(x=>x.classList.remove('active'));b.classList.add('active');const f=b.dataset.filter;$$('.car-card').forEach(c=>c.style.display=f==='all'||c.classList.contains(f)?'block':'none')}));
+window.addEventListener('mousemove',e=>{$('.cursor-glow').style.left=e.clientX+'px';$('.cursor-glow').style.top=e.clientY+'px'});
+window.addEventListener('keydown',e=>{if(e.key==='Escape'){voicePanel.classList.remove('open');modal.classList.remove('open')}});

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050709" />
+  <meta name="description" content="Velocity Motors — a cinematic, voice-first car buying experience." />
+  <title>Velocity Motors — Find your drive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Syne:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div><div class="cursor-glow"></div>
+  <header class="nav shell">
+    <a href="#top" class="brand" aria-label="Velocity home"><span class="brand-mark">V</span><span>VELOCITY</span></a>
+    <nav class="desktop-nav"><a href="#collection">Collection</a><a href="#experience">Experience</a><a href="#about">Our story</a></nav>
+    <div class="nav-actions"><button class="text-btn" data-open-login>Admin</button><button class="pill-btn voice-trigger"><span class="pulse-dot"></span> Talk to Velocity</button><button class="menu" aria-label="Toggle menu">☰</button></div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-media"><img src="assets/velocity-hero.png" alt="Performance sedan moving through a futuristic city at night"><div class="speed-lines"></div><div class="light-trails"><i></i><i></i><i></i><i></i><i></i></div><div class="road-rush"></div></div>
+      <div class="hero-vignette"></div>
+      <div class="hero-content shell">
+        <div class="eyebrow reveal"><span>01</span> Intelligence in motion</div>
+        <h1 class="reveal">Your next car.<br><em>One conversation away.</em></h1>
+        <p class="hero-copy reveal">Meet the always-on automotive concierge that listens, understands, and finds the drive made for you.</p>
+        <div class="hero-cta reveal"><button class="primary-btn voice-trigger"><span class="mic-icon">⌁</span><span>Start a conversation<small>No forms. Just talk.</small></span></button><a href="#collection" class="watch-link">Explore collection <span>↘</span></a></div>
+      </div>
+      <div class="hero-stats shell"><div><strong>240+</strong><span>Curated vehicles</span></div><div><strong>&lt; 30s</strong><span>To your first match</span></div><div><strong>24 / 7</strong><span>AI concierge</span></div></div>
+      <div class="scroll-cue">SCROLL TO DISCOVER <i></i></div>
+    </section>
+
+    <section class="statement shell" id="about">
+      <div class="section-label"><span>02</span> A better way forward</div>
+      <p>Car buying was built around <span>paperwork.</span><br>We rebuilt it around <strong>people.</strong></p>
+      <div class="statement-note">A human experience,<br>powered by intelligence.</div>
+    </section>
+
+    <section class="collection" id="collection">
+      <div class="shell section-head"><div><div class="section-label"><span>03</span> The collection</div><h2>Choose your energy.</h2></div><div class="filters"><button class="active" data-filter="all">All</button><button data-filter="electric">Electric</button><button data-filter="performance">Performance</button><button data-filter="luxury">Luxury</button></div></div>
+      <div class="car-rail shell">
+        <article class="car-card electric" style="--car:#b8d7de"><div class="card-top"><span>01</span><span>Electric</span></div><div class="car-art silver"><i></i></div><div class="card-info"><div><h3>Aurora E7</h3><p>Pure electric grand tourer</p></div><strong>$68,900</strong></div><div class="specs"><span>420 mi<small>Range</small></span><span>3.2 sec<small>0–60 mph</small></span><span>670 hp<small>Power</small></span></div></article>
+        <article class="car-card performance featured" style="--car:#e95d32"><div class="card-top"><span>02</span><span>Performance</span></div><div class="car-art orange"><i></i></div><div class="card-info"><div><h3>Vanta RS</h3><p>Unfiltered performance</p></div><strong>$92,400</strong></div><div class="specs"><span>198 mph<small>Top speed</small></span><span>2.8 sec<small>0–60 mph</small></span><span>720 hp<small>Power</small></span></div></article>
+        <article class="car-card luxury" style="--car:#667065"><div class="card-top"><span>03</span><span>Luxury</span></div><div class="car-art green"><i></i></div><div class="card-info"><div><h3>Solace LX</h3><p>Quietly extraordinary</p></div><strong>$81,200</strong></div><div class="specs"><span>610 mi<small>Range</small></span><span>4.1 sec<small>0–60 mph</small></span><span>AWD<small>Drivetrain</small></span></div></article>
+      </div>
+    </section>
+
+    <section class="experience shell" id="experience">
+      <div class="section-label"><span>04</span> Voice-first experience</div>
+      <div class="experience-grid"><div><h2>Say what you need.<br><em>We’ll handle the road.</em></h2><p>No menus to navigate. Ask naturally about models, finance, trade-ins, or book a test drive while your coffee is still warm.</p><button class="primary-btn voice-trigger"><span class="mic-icon">⌁</span><span>Talk to our assistant<small>Available right now</small></span></button></div><div class="orb-stage"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="voice-orb"><div class="wavebars"><i></i><i></i><i></i><i></i><i></i></div></div><span class="orb-label one">INVENTORY</span><span class="orb-label two">FINANCING</span><span class="orb-label three">TEST DRIVES</span></div></div>
+    </section>
+
+    <section class="final-cta"><div class="shell"><span>THE ROAD IS WAITING</span><h2>Find the one<br>that moves you.</h2><button class="light-btn voice-trigger">Start a conversation <b>→</b></button></div></section>
+  </main>
+
+  <footer class="shell"><a href="#top" class="brand"><span class="brand-mark">V</span><span>VELOCITY</span></a><p>Drive intelligently. © 2026 Velocity Motors.</p><div><a href="#">Instagram</a><a href="#">Privacy</a><a href="#">Terms</a></div></footer>
+
+  <div class="voice-panel" aria-hidden="true"><button class="close-panel" aria-label="Close">×</button><div class="voice-mini-orb"><div class="wavebars"><i></i><i></i><i></i><i></i><i></i></div></div><span class="listening">READY WHEN YOU ARE</span><h3>How can I help<br>you drive forward?</h3><p>Try “Show me an electric SUV under $70k.”</p><button class="listen-btn"><span>●</span> Start listening</button><small>Voiceflow connection will plug in here</small></div>
+
+  <div class="modal" id="loginModal" aria-hidden="true"><div class="modal-backdrop" data-close-login></div><form class="login-card" id="loginForm"><button type="button" class="modal-close" data-close-login>×</button><a class="brand"><span class="brand-mark">V</span><span>VELOCITY</span></a><div class="login-heading"><span>ADMIN CONSOLE</span><h2>Welcome back.</h2><p>Sign in to manage conversations and inventory.</p></div><label>Email address<input type="email" value="admin@velocity.com" required></label><label>Password<input type="password" value="velocity2026" required></label><div class="login-row"><label class="check"><input type="checkbox" checked> Remember me</label><a href="#">Forgot password?</a></div><button class="login-submit" type="submit">Enter dashboard <span>→</span></button><p class="demo-note">Demo: admin@velocity.com / velocity2026</p></form></div>
+
+  <section class="dashboard" id="dashboard" aria-hidden="true"><aside><a class="brand"><span class="brand-mark">V</span><span>VELOCITY</span></a><nav><button class="active">⌂ <span>Overview</span></button><button>◉ <span>Conversations</span><b>12</b></button><button>◇ <span>Leads</span></button><button>▱ <span>Inventory</span></button><button>⌁ <span>Appointments</span></button><button>⚙ <span>Settings</span></button></nav><div class="admin-profile"><span>AK</span><div><strong>Alex Kim</strong><small>Administrator</small></div></div></aside><div class="dash-main"><header><div><span>MONDAY, AUGUST 18</span><h1>Good morning, Alex.</h1></div><div><button class="icon-btn">⌕</button><button class="icon-btn">♢<i></i></button><button class="logout">Log out</button></div></header><div class="metric-grid"><article><span>Conversations</span><strong>148</strong><small class="up">↑ 18.4%</small><div class="spark"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article><article><span>Qualified leads</span><strong>37</strong><small class="up">↑ 12.1%</small><div class="donut">25%</div></article><article><span>Test drives</span><strong>16</strong><small class="up">↑ 6 this week</small><div class="mini-calendar">18</div></article><article><span>Avg. response</span><strong>1.4s</strong><small>Voice assistant</small><div class="status-ring"></div></article></div><div class="dash-grid"><section class="analytics"><div class="panel-head"><div><span>CONVERSATION ANALYTICS</span><h2>Engagement overview</h2></div><select><option>Last 7 days</option></select></div><div class="chart"><div class="y-axis"><span>80</span><span>60</span><span>40</span><span>20</span><span>0</span></div><svg viewBox="0 0 700 210" preserveAspectRatio="none"><defs><linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#80f0dc" stop-opacity=".25"/><stop offset="1" stop-color="#80f0dc" stop-opacity="0"/></linearGradient></defs><path class="area" d="M0,180 C90,170 80,120 160,135 S255,170 320,90 S425,115 490,55 S590,100 700,25 L700,210 L0,210Z"/><path class="line" d="M0,180 C90,170 80,120 160,135 S255,170 320,90 S425,115 490,55 S590,100 700,25"/></svg><div class="x-axis"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div></div></section><section class="live-feed"><div class="panel-head"><div><span>LIVE FEED</span><h2>Recent activity</h2></div><i class="live-dot"></i></div><div class="feed-item"><span class="avatar cyan">JD</span><div><strong>Test drive booked</strong><p>Jordan Davis · Aurora E7</p><small>2 min ago</small></div></div><div class="feed-item"><span class="avatar orange">MK</span><div><strong>New qualified lead</strong><p>Mia Khan · Performance</p><small>8 min ago</small></div></div><div class="feed-item"><span class="avatar purple">AR</span><div><strong>Financing question</strong><p>Amir Rahman · Solace LX</p><small>14 min ago</small></div></div><button class="view-all">View all activity →</button></section></div></div></section>
+  <script src="app.js"></script>
+</body>
+</html>
