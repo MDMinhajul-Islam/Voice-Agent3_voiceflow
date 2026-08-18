@@ -7,7 +7,7 @@ const projectRoot=resolve(fileURLToPath(new URL("../..",import.meta.url)));
 const distRoot=join(projectRoot,"frontend","dist");
 function loadLocalEnv(){const path=join(projectRoot,".env");if(!existsSync(path))return;for(const line of readFileSync(path,"utf8").split(/\r?\n/)){const match=line.match(/^\s*([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*)\s*$/);if(!match||match[2].startsWith("#")||process.env[match[1]])continue;let value=match[2].trim();if((value.startsWith('"')&&value.endsWith('"'))||(value.startsWith("'")&&value.endsWith("'")))value=value.slice(1,-1);process.env[match[1]]=value;}}
 loadLocalEnv();
-const port=Number(process.env.PORT||8787),host=process.env.HOST||"127.0.0.1",allowedOrigin=(process.env.PUBLIC_ORIGIN||"http://localhost:5173").replace(/\/$/,""),productionOrigin=`http://127.0.0.1:${port}`,rateBuckets=new Map();
+const port=Number(process.env.PORT||8787),host=process.env.HOST||"127.0.0.1",allowedOrigin=(process.env.PUBLIC_ORIGIN||"http://127.0.0.1:5173").replace(/\/$/,""),productionOrigin=`http://127.0.0.1:${port}`,rateBuckets=new Map();
 const originAllowed=(origin)=>!origin||origin===allowedOrigin||origin===productionOrigin;
 function json(res,status,body,origin=allowedOrigin){res.writeHead(status,{"Content-Type":"application/json; charset=utf-8","Cache-Control":"no-store","X-Content-Type-Options":"nosniff","Access-Control-Allow-Origin":originAllowed(origin)?origin:allowedOrigin,Vary:"Origin"});res.end(JSON.stringify(body));}
 function permit(ip){const now=Date.now(),recent=(rateBuckets.get(ip)||[]).filter(time=>now-time<60000);if(recent.length>=5)return false;recent.push(now);rateBuckets.set(ip,recent);return true;}

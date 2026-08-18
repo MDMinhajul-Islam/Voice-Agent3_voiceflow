@@ -17,7 +17,7 @@ Retell orchestrates the voice conversation. Vehicle filtering, scoring, live inv
 1. Copy `.env.example` to `.env` at the project root.
 2. Enter `RETELL_API_KEY` and `RETELL_AGENT_ID` in `.env`. Never add the API key to frontend code or commit it.
 3. From the project root run `npm install`, then `npm run dev`.
-4. Open `http://localhost:5173`. Localhost is treated as a secure microphone context by browsers.
+4. Open `http://127.0.0.1:5173`. Loopback addresses are treated as a secure microphone context by browsers.
 
 For a production-style local run, use `npm run build` followed by `npm start`, then open `http://127.0.0.1:8787`.
 
