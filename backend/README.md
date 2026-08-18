@@ -28,11 +28,18 @@ Create an Application from this Git repository and select **Dockerfile** as the 
 ```env
 RETELL_API_KEY=your_private_retell_api_key
 RETELL_AGENT_ID=your_retell_agent_id
+CAL_API_KEY=your_private_cal_api_key
+CAL_USERNAME=your_cal_username
+CAL_EVENT_TYPE_SLUG=northstar-vehicle-consultation-or-test-drive
+CAL_TIMEZONE=America/Chicago
+RETELL_TOOL_SECRET=generate_a_long_random_secret
 PUBLIC_ORIGIN=https://cars.example.com
 PORT=8787
 HOST=0.0.0.0
 ```
 
 Set the health-check path to `/api/health`. `PUBLIC_ORIGIN` must exactly match the public HTTPS origin, without a trailing slash. Do not put the Retell API key in build arguments, frontend variables, Dockerfile, or Git.
+
+The Retell calendar custom functions are `POST /api/tools/check-calendar-availability` and `POST /api/tools/book-appointment`. Both require the `X-Tool-Secret` header to match `RETELL_TOOL_SECRET`. Tool definitions ready for the Retell dashboard are stored under `backend/retell/tools/`.
 
 The current dataset verifies selected vehicle facts against US manufacturer sources. It is not dealership inventory. Records without field-level sources remain unknown and must not be presented to customers as confirmed facts.

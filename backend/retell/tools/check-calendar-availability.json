@@ -1,0 +1,17 @@
+{
+  "name": "check_calendar_availability",
+  "description": "Check live Cal.com availability only after the caller provides a preferred date or date range and time preference. Never claim a slot exists unless this tool returns it.",
+  "method": "POST",
+  "url": "https://YOUR_PUBLIC_DOMAIN/api/tools/check-calendar-availability",
+  "headers": { "X-Tool-Secret": "YOUR_RETELL_TOOL_SECRET" },
+  "payload_args_only": true,
+  "parameters": {
+    "type": "object",
+    "required": ["start_date", "end_date", "time_zone"],
+    "properties": {
+      "start_date": { "type": "string", "description": "First date to search in YYYY-MM-DD format." },
+      "end_date": { "type": "string", "description": "Last date to search in YYYY-MM-DD format, no more than 14 days after start_date." },
+      "time_zone": { "type": "string", "description": "Caller's IANA timezone, for example America/Chicago." }
+    }
+  }
+}
